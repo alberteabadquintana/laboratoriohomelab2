@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { supabase } from "@/lib/supabase"; 
+import { obtenerTodosLosAnalisis, registrarAnalisis, eliminarAnalisis, actualizarEstadoAnalisis } from "@/app/actions";
 import { useRouter } from "next/navigation";
 import { Search, Trash2, CheckCircle, Clock, List, LogOut, Plus, AlertCircle } from "lucide-react";
 
@@ -28,10 +28,7 @@ export default function AdminDashboard() {
 
   const fetchAnalisis = async () => {
     setLoading(true);
-    const { data, error } = await supabase
-      .from('analisis')
-      .select('*')
-      .order('created_at', { ascending: false });
+    const { data, error } = await obtenerTodosLosAnalisis();
     if (!error) setAnalisis(data || []);
     setLoading(false);
   };
@@ -49,9 +46,7 @@ export default function AdminDashboard() {
     
     setErrorDni(null);
     setIsSaving(true);
-    const { error } = await supabase.from('analisis').insert([
-      { dni: nuevoDni, estado: 'pendiente', created_at: new Date().toISOString() }
-    ]);
+    const { error } = await registrarAnalisis(nuevoDni);
 
     if (!error) {
       setNuevoDni("");
@@ -63,19 +58,18 @@ export default function AdminDashboard() {
 
   const confirmarEliminacion = async () => {
     if (!deleteModal.id) return;
-    const { error } = await supabase.from('analisis').delete().eq('id', deleteModal.id);
+    const { error } = await eliminarAnalisis(deleteModal.id);
     if (!error) fetchAnalisis();
     setDeleteModal({ open: false, id: null });
   };
 
   const toggleEstado = async (id: string, estadoActual: string) => {
     const nuevoEstado = estadoActual === 'pendiente' ? 'terminado' : 'pendiente';
-    const { error } = await supabase.from('analisis').update({ estado: nuevoEstado }).eq('id', id);
+    const { error } = await actualizarEstadoAnalisis(id, nuevoEstado);
     if (!error) fetchAnalisis();
   };
 
   const handleLogout = async () => {
-    await supabase.auth.signOut();
     router.push("/resultados");
   };
 
