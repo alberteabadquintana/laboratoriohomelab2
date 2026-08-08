@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { User, Search, Lock, CheckCircle2, AlertCircle, MessageCircle, Loader2, Clock } from "lucide-react";
-import { supabase } from "@/lib/supabase";
+import { consultarEstadoDni } from "@/app/actions";
 
 export default function ResultadosClient() {
   const [dni, setDni] = useState("");
@@ -18,11 +18,7 @@ export default function ResultadosClient() {
     setLoading(true);
     setStatus("idle");
 
-    const { data, error } = await supabase
-      .from('analisis')
-      .select('estado')
-      .eq('dni', dni)
-      .maybeSingle();
+    const { data, error } = await consultarEstadoDni(dni);
 
     setLoading(false);
 
