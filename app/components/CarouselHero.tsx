@@ -60,9 +60,9 @@ export default function CarouselHero() {
               <span className="inline-block px-3 py-1 bg-[#D12E7B]/10 text-[#D12E7B] rounded-full text-[10px] font-black uppercase tracking-widest mb-4">
                 HomeLab Laboratorio
               </span>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#333333] leading-tight uppercase tracking-tighter mb-4">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#333333] leading-tight uppercase tracking-tighter mb-4">
                 {slides[current].title}
-              </h1>
+              </h2>
               <p className="text-gray-500 text-sm md:text-base max-w-md mx-auto lg:mx-0 font-medium leading-relaxed">
                 {slides[current].subtitle}
               </p>
