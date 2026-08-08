@@ -107,7 +107,7 @@ export default function HomeClient() {
 
             {/* Acción 3: Domicilio (Sin cambios de funcionalidad aún) */}
             <Link 
-                href="/contactanos" 
+                href="/QuieroMiExamen" 
                 className="flex-1 flex flex-col items-center group cursor-pointer transition-transform hover:-translate-y-1"
               >
                 <div className="mb-4 text-[#333333] group-hover:text-[#D12E7B] transition-colors duration-300">

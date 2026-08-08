@@ -1,43 +1,8 @@
 // app/contactanos/ContactanosClient.tsx
 "use client";
-import { useState } from "react";
-import { Facebook, Instagram, Linkedin, MessageCircle } from "lucide-react";
+import { Facebook, Instagram, Linkedin } from "lucide-react";
 
 export default function ContactanosClient() {
-  // Estado para capturar los datos del formulario
-  const [formData, setFormData] = useState({
-    nombre: "",
-    telefono: "",
-    correo: "",
-    asunto: "",
-    mensaje: ""
-  });
-
-  // Manejador de cambios en los inputs
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  // Función para enviar a WhatsApp
-  const handleWhatsAppSend = (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    const numero = "51947052846"; 
-    
-    const mensajeTexto = `*Hola HOMELAB, soy:*%0A%0A` +
-      `*Nombre:* ${formData.nombre}%0A` +
-      `*Teléfono:* ${formData.telefono}%0A` +
-      `*Correo:* ${formData.correo}%0A` +
-      `*Asunto:* ${formData.asunto}%0A` +
-      `*Mensaje:* ${formData.mensaje}`;
-
-    const url = `https://wa.me/${numero}?text=${mensajeTexto}`;
-    window.open(url, "_blank");
-  };
-
   return (
     <section className="bg-white pt-32 pb-20">
       <div className="max-w-7xl mx-auto px-6">
@@ -48,9 +13,6 @@ export default function ContactanosClient() {
             Contacta con <span className="text-[#D12E7B]">nosotros</span>
           </h1>
           <div className="w-24 h-1 bg-[#D12E7B] mx-auto mt-4"></div>
-          <p className="text-gray-500 mt-6 max-w-2xl mx-auto font-medium">
-            Déjanos tu mensaje y un asesor se pondrá en contacto contigo a la brevedad posible para brindarte la mejor atención.
-          </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
@@ -128,87 +90,28 @@ export default function ContactanosClient() {
             </div>
           </div>
 
-          {/* COLUMNA DERECHA: FORMULARIO */}
-          <div className="lg:col-span-8">
-            <form onSubmit={handleWhatsAppSend} className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="md:col-span-2">
-                <label className="block text-[#D12E7B] font-black uppercase text-[10px] tracking-widest mb-2">Nombres y Apellidos: *</label>
-                <input 
-                  required
-                  name="nombre"
-                  value={formData.nombre}
-                  onChange={handleChange}
-                  type="text" 
-                  placeholder="Ingresa sus nombres y Apellidos" 
-                  className="w-full border-b-2 border-gray-200 focus:border-[#D12E7B] outline-none py-3 text-sm transition-colors font-medium text-[#333333] bg-transparent" 
-                />
+          {/* COLUMNA DERECHA: MAPA */}
+          <div className="lg:col-span-8 h-full min-h-[400px]">
+              <div className="relative rounded-[2rem] overflow-hidden shadow-xl border border-gray-100 group h-full">
+                <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#D12E7B] via-[#e95fa0] to-[#D12E7B] z-10"></div>
+                <div className="absolute inset-0 ring-1 ring-inset ring-black/5 rounded-[2rem] z-10 pointer-events-none"></div>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3973.5197069650494!2d-80.65244082525777!3d-5.180651194796812!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x904a1b00177c8c23%3A0x2a3bac83cf93ab2b!2sCl%C3%ADnica%20Bello%20Horizonte%20-%20PIURA!5e0!3m2!1ses-419!2spe!4v1786209209591!5m2!1ses-419!2spe"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0, display: 'block', minHeight: '400px' }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  title="Ubicación de HomeLab - Clínica Bello Horizonte, Piura"
+                  aria-label="Mapa de ubicación del laboratorio HomeLab en Piura"
+                  className="w-full h-full transition-all duration-500 group-hover:scale-[1.01]"
+                ></iframe>
               </div>
-
-              <div>
-                <label className="block text-[#D12E7B] font-black uppercase text-[10px] tracking-widest mb-2">Teléfono: *</label>
-                <input 
-                  required
-                  name="telefono"
-                  value={formData.telefono}
-                  onChange={handleChange}
-                  type="tel" 
-                  placeholder="Ingresa tu teléfono" 
-                  className="w-full border-b-2 border-gray-200 focus:border-[#D12E7B] outline-none py-3 text-sm transition-colors font-medium bg-transparent" 
-                />
-              </div>
-
-              <div>
-                <label className="block text-[#D12E7B] font-black uppercase text-[10px] tracking-widest mb-2">Correo electrónico: *</label>
-                <input 
-                  required
-                  name="correo"
-                  value={formData.correo}
-                  onChange={handleChange}
-                  type="email" 
-                  placeholder="Ingresa tu correo electrónico" 
-                  className="w-full border-b-2 border-gray-200 focus:border-[#D12E7B] outline-none py-3 text-sm transition-colors font-medium bg-transparent" 
-                />
-              </div>
-
-              <div className="md:col-span-2">
-                <label className="block text-[#D12E7B] font-black uppercase text-[10px] tracking-widest mb-2">Asunto: *</label>
-                <input 
-                  required
-                  name="asunto"
-                  value={formData.asunto}
-                  onChange={handleChange}
-                  type="text" 
-                  placeholder="Ingrese su asunto" 
-                  className="w-full border-b-2 border-gray-200 focus:border-[#D12E7B] outline-none py-3 text-sm transition-colors font-medium bg-transparent" 
-                />
-              </div>
-
-              <div className="md:col-span-2">
-                <label className="block text-[#D12E7B] font-black uppercase text-[10px] tracking-widest mb-2">Mensaje: *</label>
-                <textarea 
-                  required
-                  name="mensaje"
-                  value={formData.mensaje}
-                  onChange={handleChange}
-                  rows={4} 
-                  placeholder="Ingresa tu mensaje" 
-                  className="w-full border-b-2 border-gray-200 focus:border-[#D12E7B] outline-none py-3 text-sm transition-colors font-medium resize-none bg-transparent"
-                ></textarea>
-              </div>
-
-              <div className="md:col-span-2">
-                <button 
-                  type="submit" 
-                  className="flex items-center gap-3 bg-[#333333] text-white px-10 py-4 rounded-xl font-black uppercase text-xs tracking-[0.2em] hover:bg-[#25D366] transition-all duration-300 shadow-xl shadow-black/10"
-                >
-                  Enviar a HOMELAB
-                  
-                </button>
-              </div>
-            </form>
           </div>
 
         </div>
+
       </div>
     </section>
   );
