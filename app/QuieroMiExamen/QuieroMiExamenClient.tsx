@@ -33,11 +33,15 @@ const CATALOGOS = [
   },
   {
     categoria: "Perfil Hepático",
-    examenes: ["G.G.T.P", "TP-INR", "TGO", "TGP", "Proteínas", "Fosfatasa Alcalina", "Bilirrubina"],
+    examenes: ["G.G.T.P", "TP - INR", "Proteínas", "Fosfatasa Alcalina", "Bilirrubina", "TGO", "TGP"],
+  },
+  {
+    categoria: "Orina",
+    examenes: ["Urocultivo", "Ac. Úrico 24h", "Bence Jones Proteína", "Calcio 24h", "Creatinina", "Ex. Completo", "Electrolitos 24h", "NTX (Orina Simple)", "Proteinuria 24h", "Depuración de Creatinina"],
   },
   {
     categoria: "Perfil Pre-Operatorio",
-    examenes: ["Hemograma", "Glucosa", "Urea", "Creatinina", "HIV", "Grupo y RH", "TP-INR", "TC", "TS", "Orina", "RPR"],
+    examenes: ["Hemograma", "Glucosa", "Urea", "Creatinina", "HIV", "Grupo y RH", "TP - INR", "TC", "TS", "Orina", "RPR"],
   },
   {
     categoria: "Perfil Pre-Natal",
@@ -48,8 +52,16 @@ const CATALOGOS = [
     examenes: ["FSH", "LH", "Estradiol", "Prolactina", "Progesterona"],
   },
   {
+    categoria: "Heces",
+    examenes: ["Campylobacter", "Coprológico Funcional", "Estudio de Coccidios", "RX Inflam. Leucocitos", "Parasitológico Especial", "Parasitológico Simple", "Parasitológico Seriado x3", "Rotavirus", "Test Graham", "Thevenon"],
+  },
+  {
+    categoria: "Perfil Tiroideo 2",
+    examenes: ["T3 Libre", "TCH", "T4 Libre"],
+  },
+  {
     categoria: "Anemia",
-    examenes: ["Hemograma", "Hierro Sérico", "Ferritina", "B12", "Ácido Fólico"],
+    examenes: ["Hemograma", "Hierro", "Sérico", "Ferritina", "B12", "Ácido Fólico"],
   },
   {
     categoria: "Perfil Pediátrico",
@@ -68,24 +80,24 @@ const CATALOGOS = [
     examenes: ["T3 Total", "TSH", "T4 Libre"],
   },
   {
-    categoria: "Perfil Tiroideo 2",
-    examenes: ["T3 Libre", "TCH", "T4 Libre"],
-  },
-  {
     categoria: "Despistaje Alérgico",
     examenes: ["Panel de Alergias"],
   },
   {
     categoria: "Hematología",
-    examenes: ["Ac. Fólico", "Ac. Fólico Intraeritrocitario", "Coag y Sangría", "Fenómeno LE", "Ferritina", "Fibrinógeno", "Gota Gruesa", "Hemoglobina/HTO", "Hemograma", "Hierro Sérico", "Plaquetas", "Reticulocitos", "Saturación de Transferrina", "Transferrina", "Trombina", "T. Protrombina", "T. Tromboplastina", "Veloc. Sedimentación", "Vit. B12", "Hemoglobina Glicosilada"],
+    examenes: ["Ac. Fólico", "Ac. Fólico Intraeritrocitario", "Coag y Sangría", "Fenómeno LE", "Ferritina", "Fibrinógeno", "Gota Gruesa", "Hemoglobina / HTO", "Hemograma", "Hierro Sérico", "Plaquetas", "Reticulocitos", "Saturación de Transferrina", "Transferrina", "Trombina", "T. Protrombina", "T. Tromboplastina", "Veloc. Sedimentación", "Vit. B12", "Hemoglobina Glicosilada"],
   },
   {
     categoria: "Bioquímica",
-    examenes: ["Ac. Úrico", "Amilasa", "Bilirrubinas", "BUN (Nitrógeno Ureico)", "Calcio/Ca Iónico", "Cálculo Renal", "Colesterol Total", "Colesterol HDL", "Colesterol LDL", "Colesterol VLDL", "Creatinina", "CPK", "CK-MB", "DHL (Deshidrogenasa Láctica)", "Dímero-D", "DEP Creatinina", "Electrolitos (Na-Cl-K)", "Fosf. Alcalina", "Fosforo", "G.G.T.P", "Glucosa", "Glucosa PP", "Lipasa", "Lípidos Totales", "Magnesio", "Osmolaridad Sérica", "Prot. Tct. Fracc.", "Proteinograma", "Riesgo Coronario", "Tolerancia Glucosa", "Tolerancia Lactosa", "Transaminasa Oxalacética", "Transaminasa Pirúvica", "Triglicéridos", "Urea", "Vit. D (25-Hidroxi)", "Vit. D (1,25 Dihidroxil)"],
+    examenes: ["Ac. Úrico", "Amilasa", "Bilirrubinas", "BUN (Nitrógeno Ureico)", "Calcio / Ca Iónico", "Cálculo Renal", "Colesterol Total", "Colesterol HDL", "Colesterol LDL", "Colesterol VLDL", "Creatinina", "CPK", "CK - MB", "DHL (Deshidrogenasa Láctica)", "Dímero - D.", "DEP Creatinina", "Electrolitos (Na - Cl - K)", "Fosf. Alcalina", "Fosforo", "G.G.T.P", "Glucosa", "Glucosa P.P", "Lipasa", "Lípidos Totales", "Magnesio", "Osmolaridad Sérica", "Prot. Tot. Fracc.", "Proteinograma", "Riesgo Coronario", "Tolerancia Glucosa", "Tolerancia Lactosa", "Transaminasa Oxalacética", "Transaminasa Pirúvica", "Triglicéridos", "Urea", "Vit. D (25-Hidroxi)", "Vit. D (1.25 Dihidroxi)"],
   },
   {
     categoria: "Inmunología",
-    examenes: ["Anti Hbc. Ag. (Anti Core)", "Anti Hbe Ag (Anti E)", "H2e Ag. (Antígeno E)", "HVC-Hepatitis C", "HVD-Hepatitis D", "Ac. Chlamydia IgG", "Ac. Chlamydia IgM", "Ac. Cisticercosis", "Ac. Criptococcis", "Ac. Herpes I IgM", "Ac. Herpes IgG", "Ac. Herpes II IgM", "Ac. Herpes II IgG", "Ac. Toxoplasma IgG", "Ac. Toxoplasma IgM", "Ac. Rubeola IgG", "Ac. Rubeola IgM", "Ac. Citomegalovirus IgM", "Ac. Citomegalovirus IgG", "Ac. H.I.V.", "Ac. H.I.V (Western Blot)", "Coombs Directo", "Coombs Indirecto", "Crioglobulinas", "Crioglutininas", "Complemento C3-C4", "Epstein Barr IgG (EBNA)", "Epstein Barr IgM (EBNA)", "FTA-ABS", "Factor Rematoideo", "HCG Cuantitativo-Beta", "Hidatidosis (Elisa)", "Inmunoglob. (IgA, IgG, IgM)", "Inmunoglobulinas E", "Inmunoelectroforesis", "Paul Bunnel", "Proteína C Reactiva", "Prot. C Reac. Ultrasensible", "Pro-BNP", "Serológica Semicuántica", "Waller Rose", "Test de Alergia", "Troponina T", "Tamizaje Neonatal x4", "Aglutinaciones Lámina", "Aglutinaciones en Tubo", "Aglut. Fen. Zona", "Aglut. 2-M Etanol", "Antic. Bloqueadores", "Antic. Antinucleares", "Antic. Estreptolisinas", "Anti-DNA-DS", "Antimitocondriales (AMA)", "Anti Músculo Liso", "Anti HAV IgG", "Anti HAV IgM", "Hbs. Ag (Australiano Superficie)", "Anti Hbs Ag (Vacuna)"],
+    examenes: ["Anti Hbc. Ag. (Anti Core)", "Anti Hbc IgM", "Anti Hbe Ag (Anti E)", "Hbe Ag. (Antígeno E)", "HVC - Hepatitis C", "HVD - Hepatitis D", "Ac. Chlamydia IgG", "Ac. Chlamydia IgM", "Ac. Cisticercosis", "Ac. Criptococosis", "Ac. Herpes I IgM", "Ac. Herpes I IgG", "Ac. Herpes II IgM", "Ac. Herpes II IgG", "Ac. Toxoplasma IgG", "Ac. Toxoplasma IgM", "Ac. Rubeola IgG", "Ac. Rubeola IgM", "Ac. Citomegalovirus IgM", "Ac. Citomegalovirus IgG", "Ac. H.I.V.", "Ac. H.I.V (Western Blot)", "Coombs Directo", "Coombs Indirecto", "Crioglobulinas", "Crioglutininas", "Complemento C3-C4", "Epstein Barr IgG (EBNA)", "Epstein Barr IgM (EBNA)", "FTA - ABS", "Factor Rematoideo", "Grupo y RH", "HCG Cuantitativo - Beta", "Hidatidosis (Elisa)", "Inmunoglob. (IgA, IgG, IgM)", "Inmunoglobulinas E", "Inmunoelectroforesis", "Paul Bunnel", "Proteína C Reactiva", "Prot. C Reac. Ultrasensible", "Pro - BNP", "Serológica Semicuántica", "Waller Rose", "Test de Alergia", "Troponina T", "Tamizaje Neonatal x4", "Aglutinaciones Lámina", "Aglutinaciones en Tubo", "Aglut. Fen. Zona", "Aglut. 2-M Etanol", "Antic. Bloqueadores", "Antic. Antinucleares", "Antic. Estreptolisinas", "Anti - DNA - DS", "Antimitocondriales (AMA)", "Anti Músculo Liso", "Anti HAV IgG", "Anti HAV IgM", "Hbs. Ag (Australiano Superficie)", "Anti Hbs Ag (Vacuna)"],
+  },
+  {
+    categoria: "Microbiología",
+    examenes: ["BK Directo", "Coprocultivo", "Cultivo BK", "Cultivo Sec. Conjunt.", "Cultivo Sec. Vaginal", "Cultivo de Hongos", "Frotis Directo (Gérmenes)", "Frotis Directo (Hongos)", "Hemocultivo", "Secreción Faríngea"],
   },
   {
     categoria: "Marcadores Tumorales",
@@ -93,19 +105,7 @@ const CATALOGOS = [
   },
   {
     categoria: "Endocrinología",
-    examenes: ["Cortisol AM-PM", "DHE-S", "Estradiol", "Estrol Libre", "FSH", "Hormona Crecimiento", "Insulina", "LH", "Progesterona", "Prolactina", "Somatomedina (IGF1)", "Testosterona Total", "Testosterona Libre", "Tiroxina (T4)", "Tolerancia Insulina", "Triyodotironina (T3)", "TSH Ultrasensible", "T3 Libre", "T4 Libre"],
-  },
-  {
-    categoria: "Microbiología",
-    examenes: ["BK Directo", "Coprocultivo", "Cultivo BK", "Cultivo Sec. Conjunt.", "Cultivo Sec. Vaginal", "Cultivo de Hongos", "Frotis Directo (Gérmenes)", "Frotis Directo (Hongos)", "Hemocultivo", "Secreción Faríngea"],
-  },
-  {
-    categoria: "Heces",
-    examenes: ["Campylobacter", "Coprológico Funcional", "Estudio de Coccidios", "RX Inflam. Leucocitos", "Parasitológico Especial", "Parasitológico Simple", "Parasitológico Seriado x3", "Rotavirus", "Test Graham", "Thevenon"],
-  },
-  {
-    categoria: "Orina",
-    examenes: ["Urocultivo", "Ac. Úrico 24h", "Bence Jones Proteína", "Calcio 24h", "Creatinina", "Ex. Completo", "Electrolitos 24h", "HtX (Orina Simple)", "Proteinuria 24h", "Depuración de Creatinina"],
+    examenes: ["Cortisol AM - PM", "DHE - S", "Estradiol", "Estriol Libre", "FSH", "Hormona Crecimiento", "Insulina", "LH", "Progesterona", "Prolactina", "Somatomedina (IGF1)", "Testosterona Total", "Testosterona Libre", "Tiroxina (T4)", "Tolerancia Insulina", "Triyodotironina (T3)", "TSH Ultrasensible", "T3 Libre", "T4 Libre"],
   },
 ];
 
@@ -139,29 +139,26 @@ function StepIndicator({ paso, total }: { paso: number; total: number }) {
         <div key={i} className="flex items-center">
           <div className="flex flex-col items-center">
             <div
-              className={`w-7 h-7 sm:w-9 sm:h-9 rounded-full flex items-center justify-center text-[10px] sm:text-xs font-black transition-all duration-300 ${
-                i < paso
+              className={`w-7 h-7 sm:w-9 sm:h-9 rounded-full flex items-center justify-center text-[10px] sm:text-xs font-black transition-all duration-300 ${i < paso
                   ? "bg-[#D12E7B] text-white shadow-lg shadow-[#D12E7B]/30"
                   : i === paso
-                  ? "bg-[#D12E7B] text-white ring-2 sm:ring-4 ring-[#D12E7B]/20 shadow-lg shadow-[#D12E7B]/30"
-                  : "bg-gray-100 text-gray-400"
-              }`}
+                    ? "bg-[#D12E7B] text-white ring-2 sm:ring-4 ring-[#D12E7B]/20 shadow-lg shadow-[#D12E7B]/30"
+                    : "bg-gray-100 text-gray-400"
+                }`}
             >
               {i < paso ? <Check className="w-3 h-3 sm:w-4 sm:h-4" /> : i + 1}
             </div>
             <span
-              className={`text-[9px] font-bold mt-1 uppercase tracking-wider hidden sm:block ${
-                i <= paso ? "text-[#D12E7B]" : "text-gray-400"
-              }`}
+              className={`text-[9px] font-bold mt-1 uppercase tracking-wider hidden sm:block ${i <= paso ? "text-[#D12E7B]" : "text-gray-400"
+                }`}
             >
               {label}
             </span>
           </div>
           {i < total - 1 && (
             <div
-              className={`w-3 sm:w-14 h-0.5 mx-1 mb-4 sm:mb-4 transition-all duration-500 ${
-                i < paso ? "bg-[#D12E7B]" : "bg-gray-200"
-              }`}
+              className={`w-3 sm:w-14 h-0.5 mx-1 mb-4 sm:mb-4 transition-all duration-500 ${i < paso ? "bg-[#D12E7B]" : "bg-gray-200"
+                }`}
             />
           )}
         </div>
@@ -199,11 +196,10 @@ function NavButtons({
       <button
         onClick={onNext}
         disabled={nextDisabled}
-        className={`flex items-center justify-center gap-2 px-5 sm:px-8 py-3.5 rounded-xl font-black text-[10px] sm:text-xs uppercase tracking-widest transition-all duration-300 ${
-          nextDisabled
+        className={`flex items-center justify-center gap-2 px-5 sm:px-8 py-3.5 rounded-xl font-black text-[10px] sm:text-xs uppercase tracking-widest transition-all duration-300 ${nextDisabled
             ? "bg-gray-100 text-gray-400 cursor-not-allowed"
             : "bg-[#D12E7B] text-white hover:bg-[#b02666] shadow-lg shadow-[#D12E7B]/25 hover:-translate-y-0.5 active:scale-95"
-        }`}
+          }`}
       >
         {nextLabel} <ChevronRight className="w-4 h-4" />
       </button>
@@ -217,6 +213,7 @@ export default function QuieroMiExamenClient() {
   const [codigoReserva, setCodigoReserva] = useState("");
   const [copiado, setCopiado] = useState(false);
   const [busqueda, setBusqueda] = useState("");
+  const [otroExamen, setOtroExamen] = useState("");
   const [form, setForm] = useState<FormData>({
     modalidad: null,
     dni: "",
@@ -252,6 +249,19 @@ export default function QuieroMiExamenClient() {
     }));
   };
 
+  const agregarOtroExamen = () => {
+    if (otroExamen.trim()) {
+      const nuevo = otroExamen.trim();
+      if (!form.analisesSeleccionados.includes(nuevo)) {
+        setForm((prev) => ({
+          ...prev,
+          analisesSeleccionados: [...prev.analisesSeleccionados, nuevo],
+        }));
+      }
+      setOtroExamen("");
+    }
+  };
+
   const generarCodigo = () => {
     const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
     let code = "HL-";
@@ -283,11 +293,10 @@ export default function QuieroMiExamenClient() {
         {/* SEDE */}
         <button
           onClick={() => setForm((p) => ({ ...p, modalidad: "sede" }))}
-          className={`group relative p-8 rounded-2xl border-2 text-left transition-all duration-300 cursor-pointer ${
-            form.modalidad === "sede"
+          className={`group relative p-8 rounded-2xl border-2 text-left transition-all duration-300 cursor-pointer ${form.modalidad === "sede"
               ? "border-[#D12E7B] bg-[#D12E7B]/5 shadow-xl shadow-[#D12E7B]/10"
               : "border-gray-200 bg-white hover:border-[#D12E7B]/40 hover:shadow-lg"
-          }`}
+            }`}
         >
           {form.modalidad === "sede" && (
             <span className="absolute top-4 right-4">
@@ -295,9 +304,8 @@ export default function QuieroMiExamenClient() {
             </span>
           )}
           <div
-            className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-5 transition-all ${
-              form.modalidad === "sede" ? "bg-[#D12E7B]" : "bg-gray-100 group-hover:bg-[#D12E7B]/10"
-            }`}
+            className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-5 transition-all ${form.modalidad === "sede" ? "bg-[#D12E7B]" : "bg-gray-100 group-hover:bg-[#D12E7B]/10"
+              }`}
           >
             <Building2 className={`w-7 h-7 ${form.modalidad === "sede" ? "text-white" : "text-gray-400"}`} />
           </div>
@@ -318,11 +326,10 @@ export default function QuieroMiExamenClient() {
         {/* DOMICILIO */}
         <button
           onClick={() => setForm((p) => ({ ...p, modalidad: "domicilio" }))}
-          className={`group relative p-8 rounded-2xl border-2 text-left transition-all duration-300 cursor-pointer ${
-            form.modalidad === "domicilio"
+          className={`group relative p-8 rounded-2xl border-2 text-left transition-all duration-300 cursor-pointer ${form.modalidad === "domicilio"
               ? "border-[#D12E7B] bg-[#D12E7B]/5 shadow-xl shadow-[#D12E7B]/10"
               : "border-gray-200 bg-white hover:border-[#D12E7B]/40 hover:shadow-lg"
-          }`}
+            }`}
         >
           {form.modalidad === "domicilio" && (
             <span className="absolute top-4 right-4">
@@ -330,9 +337,8 @@ export default function QuieroMiExamenClient() {
             </span>
           )}
           <div
-            className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-5 transition-all ${
-              form.modalidad === "domicilio" ? "bg-[#D12E7B]" : "bg-gray-100 group-hover:bg-[#D12E7B]/10"
-            }`}
+            className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-5 transition-all ${form.modalidad === "domicilio" ? "bg-[#D12E7B]" : "bg-gray-100 group-hover:bg-[#D12E7B]/10"
+              }`}
           >
             <Home className={`w-7 h-7 ${form.modalidad === "domicilio" ? "text-white" : "text-gray-400"}`} />
           </div>
@@ -516,16 +522,14 @@ export default function QuieroMiExamenClient() {
                   <button
                     key={examen}
                     onClick={() => toggleAnalisis(examen)}
-                    className={`flex items-center gap-3 px-4 py-2.5 rounded-xl text-left text-xs font-bold transition-all duration-200 ${
-                      sel
+                    className={`flex items-center gap-3 px-4 py-2.5 rounded-xl text-left text-xs font-bold transition-all duration-200 ${sel
                         ? "bg-[#D12E7B] text-white shadow-md shadow-[#D12E7B]/20"
                         : "bg-gray-50 text-[#333333] hover:bg-[#D12E7B]/8 hover:text-[#D12E7B]"
-                    }`}
+                      }`}
                   >
                     <div
-                      className={`w-4 h-4 rounded-full border-2 flex-shrink-0 flex items-center justify-center transition-all ${
-                        sel ? "border-white bg-white" : "border-gray-300"
-                      }`}
+                      className={`w-4 h-4 rounded-full border-2 flex-shrink-0 flex items-center justify-center transition-all ${sel ? "border-white bg-white" : "border-gray-300"
+                        }`}
                     >
                       {sel && <div className="w-2 h-2 rounded-full bg-[#D12E7B]" />}
                     </div>
@@ -536,6 +540,32 @@ export default function QuieroMiExamenClient() {
             </div>
           </div>
         ))}
+      </div>
+
+      {/* Sección Otros */}
+      <div className="mt-4 p-4 bg-white border border-gray-200 rounded-2xl shadow-sm">
+        <p className="text-[#333333] font-black text-xs uppercase tracking-widest mb-3 flex items-center gap-2">
+          <ClipboardList className="w-4 h-4 text-[#D12E7B]" />
+          Otros Análisis
+        </p>
+        <p className="text-xs text-gray-500 font-medium mb-3">Si no encuentras tu análisis en la lista, escríbelo aquí:</p>
+        <div className="flex flex-col sm:flex-row gap-2">
+          <input
+            type="text"
+            value={otroExamen}
+            onChange={(e) => setOtroExamen(e.target.value)}
+            onKeyDown={(e) => e.key === 'Enter' && agregarOtroExamen()}
+            placeholder="Ej: PCR, Prueba de Embarazo..."
+            className="flex-1 px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl focus:border-[#D12E7B] focus:bg-white outline-none text-sm font-medium text-[#333333] transition-all"
+          />
+          <button
+            onClick={agregarOtroExamen}
+            disabled={!otroExamen.trim()}
+            className="px-5 py-2.5 bg-[#D12E7B] text-white text-xs font-black uppercase tracking-widest rounded-xl hover:bg-[#b02666] transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-md shadow-[#D12E7B]/20"
+          >
+            Agregar
+          </button>
+        </div>
       </div>
 
       <NavButtons
@@ -579,11 +609,10 @@ export default function QuieroMiExamenClient() {
               <button
                 key={h}
                 onClick={() => setForm((p) => ({ ...p, horario: h }))}
-                className={`py-2.5 rounded-xl text-xs font-black border-2 transition-all duration-200 ${
-                  form.horario === h
+                className={`py-2.5 rounded-xl text-xs font-black border-2 transition-all duration-200 ${form.horario === h
                     ? "bg-[#D12E7B] border-[#D12E7B] text-white shadow-md shadow-[#D12E7B]/20"
                     : "bg-white border-gray-200 text-[#333333] hover:border-[#D12E7B]/50"
-                }`}
+                  }`}
               >
                 {h}
               </button>
@@ -708,9 +737,8 @@ export default function QuieroMiExamenClient() {
       </p>
 
       {/* Info del modo */}
-      <div className={`mb-8 flex items-center gap-3 px-5 py-4 rounded-2xl text-sm font-bold ${
-        form.modalidad === "domicilio" ? "bg-amber-50 border border-amber-200 text-amber-700" : "bg-blue-50 border border-blue-200 text-blue-700"
-      }`}>
+      <div className={`mb-8 flex items-center gap-3 px-5 py-4 rounded-2xl text-sm font-bold ${form.modalidad === "domicilio" ? "bg-amber-50 border border-amber-200 text-amber-700" : "bg-blue-50 border border-blue-200 text-blue-700"
+        }`}>
         {form.modalidad === "domicilio" ? (
           <><Home className="w-4 h-4 flex-shrink-0" /> Atención a domicilio — pago online requerido</>
         ) : (
@@ -722,11 +750,10 @@ export default function QuieroMiExamenClient() {
         {/* PAGAR AHORA */}
         <button
           onClick={() => setForm((p) => ({ ...p, formaPago: "pagar_ahora" }))}
-          className={`group relative p-7 rounded-2xl border-2 text-left transition-all duration-300 ${
-            form.formaPago === "pagar_ahora"
+          className={`group relative p-7 rounded-2xl border-2 text-left transition-all duration-300 ${form.formaPago === "pagar_ahora"
               ? "border-[#D12E7B] bg-[#D12E7B]/5 shadow-xl shadow-[#D12E7B]/10"
               : "border-gray-200 bg-white hover:border-[#D12E7B]/40 hover:shadow-lg"
-          }`}
+            }`}
         >
           {form.formaPago === "pagar_ahora" && (
             <CheckCircle2 className="absolute top-4 right-4 w-6 h-6 text-[#D12E7B]" />
@@ -742,11 +769,10 @@ export default function QuieroMiExamenClient() {
         {form.modalidad === "sede" ? (
           <button
             onClick={() => setForm((p) => ({ ...p, formaPago: "pagar_sede" }))}
-            className={`group relative p-7 rounded-2xl border-2 text-left transition-all duration-300 ${
-              form.formaPago === "pagar_sede"
+            className={`group relative p-7 rounded-2xl border-2 text-left transition-all duration-300 ${form.formaPago === "pagar_sede"
                 ? "border-[#333333] bg-[#333333]/5 shadow-xl"
                 : "border-gray-200 bg-white hover:border-[#333333]/40 hover:shadow-lg"
-            }`}
+              }`}
           >
             {form.formaPago === "pagar_sede" && (
               <CheckCircle2 className="absolute top-4 right-4 w-6 h-6 text-[#333333]" />
@@ -773,7 +799,7 @@ export default function QuieroMiExamenClient() {
           <div className="space-y-3 text-sm text-[#333333] font-medium">
             <div className="flex items-start gap-3">
               <span className="w-6 h-6 rounded-full bg-[#D12E7B] text-white flex items-center justify-center text-[10px] font-black flex-shrink-0 mt-0.5">1</span>
-              <p>Realiza la transferencia o pago por <strong>Yape / Plin</strong> al número <strong>947 052 846</strong>.</p>
+              <p>Realiza la transferencia o pago por <strong>Yape / Plin</strong> al número <strong>931 758 558</strong>.</p>
             </div>
             <div className="flex items-start gap-3">
               <span className="w-6 h-6 rounded-full bg-[#D12E7B] text-white flex items-center justify-center text-[10px] font-black flex-shrink-0 mt-0.5">2</span>
@@ -846,7 +872,7 @@ export default function QuieroMiExamenClient() {
       <div className="flex flex-col sm:flex-row gap-3 justify-center">
         {form.formaPago === "pagar_ahora" && (
           <a
-            href={`https://wa.me/51947052846?text=Hola%20HomeLab!%20Tengo%20mi%20reserva%20*${codigoReserva}*%20y%20adjunto%20el%20comprobante%20de%20pago%20para%20confirmar%20mi%20cita%20del%20${form.fecha}%20a%20las%20${form.horario}%20hrs.`}
+            href={`https://wa.me/51931758558?text=Hola%20HomeLab!%20Tengo%20mi%20reserva%20*${codigoReserva}*%20y%20adjunto%20el%20comprobante%20de%20pago%20para%20confirmar%20mi%20cita%20del%20${form.fecha}%20a%20las%20${form.horario}%20hrs.`}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 bg-[#25D366] text-white px-8 py-4 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-[#1da851] transition-all shadow-lg shadow-[#25D366]/25 hover:-translate-y-0.5 active:scale-95"
@@ -883,7 +909,7 @@ export default function QuieroMiExamenClient() {
   };
 
   return (
-    <section className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-[#D12E7B]/5 pt-28 pb-24">
+    <section className="min-h-screen bg-white pt-28 pb-24">
       <div className="max-w-4xl mx-auto px-3 sm:px-6">
         {/* Header */}
         <div className="text-center mb-6 sm:mb-10">

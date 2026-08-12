@@ -6,8 +6,8 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation'; 
 import { Phone, Copy, Check } from "lucide-react";
 
-const TELEFONO = "947052846";
-const TELEFONO_DISPLAY = "+51 947 052 846";
+const TELEFONO = "931758558";
+const TELEFONO_DISPLAY = "+51 931 758 558";
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);

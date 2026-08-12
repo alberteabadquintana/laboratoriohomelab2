@@ -110,7 +110,7 @@ export default function Footer() {
 
                             <div className="flex items-center bg-white/5 p-4 rounded-xl border border-white/5 backdrop-blur-sm group hover:bg-white/10 transition-colors">
                                 <Phone className="mr-3 text-[#D12E7B] flex-shrink-0" size={18} />
-                                <span className="text-white text-sm font-semibold tracking-wide">+51 947 052 846</span>
+                                <span className="text-white text-sm font-semibold tracking-wide">+51 931 758 558</span>
                             </div>
 
                             <div className="flex items-center bg-white/5 p-4 rounded-xl border border-white/5 backdrop-blur-sm group hover:bg-white/10 transition-colors">

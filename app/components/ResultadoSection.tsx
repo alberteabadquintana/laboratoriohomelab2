@@ -53,7 +53,7 @@ export default function AsesorSection() {
                         <div className="flex flex-wrap justify-center md:justify-start gap-4">
                            {/* Botón WhatsApp Estilo HomeLab con Mensaje Predeterminado */}
                             <a 
-                                href="https://wa.me/51947052846?text=Hola%20HomeLab,%20deseo%20obtener%20más%20información%20para%20realizarme%20analisis." 
+                                href="https://wa.me/51931758558?text=Hola%20HomeLab,%20deseo%20obtener%20más%20información%20para%20realizarme%20analisis." 
                                 target="_blank" 
                                 rel="noopener noreferrer"
                                 className="inline-block" // Para que el enlace respete el tamaño del botón

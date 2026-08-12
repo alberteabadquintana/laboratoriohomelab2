@@ -5,6 +5,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import WhatsAppFloat from './components/WhatsAppFloat';
 import LoadingScreen from './components/LoadingScreen'; 
+import ChatBot from './components/ChatBot';
 
 // TODO: reemplazar por el dominio real cuando esté definido (o setear
 // NEXT_PUBLIC_SITE_URL en .env.local / variables de entorno de Vercel).
@@ -76,6 +77,7 @@ export default function RootLayout({
         {/* Componentes flotantes y globales */}
         
         <WhatsAppFloat />
+        <ChatBot />
         <Footer />
       </body>
     </html>

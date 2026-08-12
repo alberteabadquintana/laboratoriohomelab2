@@ -86,7 +86,7 @@ export default function HomeClient() {
 
             {/* Acción 2: Cotizador (WhatsApp) */}
             <a 
-              href="https://wa.me/51947052846?text=Hola%20HomeLab,%20me%20gustaría%20cotizar%20un%20análisis%20clínico." 
+              href="https://wa.me/51931758558?text=Hola%20HomeLab,%20me%20gustaría%20cotizar%20un%20análisis%20clínico." 
               target="_blank" 
               rel="noopener noreferrer"
               className="flex-1 flex flex-col items-center group cursor-pointer"
