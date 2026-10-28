@@ -137,7 +137,8 @@ export default function ResultadosClient() {
                 />
               </div>
               <p className="text-[11px] text-gray-500 ml-1">
-                Lo encuentras en tu comprobante. Es necesario para proteger tus datos.
+                En sede es el código de atención que te entregaron; si reservaste por la web, es tu código de reserva.
+                Lo pedimos para proteger tus datos.
               </p>
             </div>
 
