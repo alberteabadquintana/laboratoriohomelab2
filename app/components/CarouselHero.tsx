@@ -33,15 +33,15 @@ const slides = [
 export default function CarouselHero() {
   const [current, setCurrent] = useState(0);
 
+  const nextSlide = () => setCurrent((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+  const prevSlide = () => setCurrent((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+
   useEffect(() => {
     const timer = setInterval(() => {
       nextSlide();
     }, 7000);
     return () => clearInterval(timer);
   }, [current]);
-
-  const nextSlide = () => setCurrent((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-  const prevSlide = () => setCurrent((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
 
   return (
     <section className="relative h-[500px] w-full bg-[#fdfdfd] overflow-hidden flex items-center">

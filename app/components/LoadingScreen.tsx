@@ -9,14 +9,19 @@ export default function LoadingScreen() {
     const pathname = usePathname();
 
     useEffect(() => {
-        setIsLoading(true);
+        let isMounted = true;
 
         // Aumentamos a 1.5 segundos para que el usuario llegue a ver la animación
         const timer = setTimeout(() => {
-            setIsLoading(false);
+            if (isMounted) {
+                setIsLoading(false);
+            }
         }, 1500); 
 
-        return () => clearTimeout(timer);
+        return () => {
+            isMounted = false;
+            clearTimeout(timer);
+        };
     }, [pathname]);
 
     return (

@@ -58,12 +58,6 @@ export default function Header() {
         ? 'text-[#333333]' 
         : 'text-white';
 
-    const buttonStyle = !isHomePage || isScrolled
-        ? 'bg-[#D12E7B] text-white hover:bg-[#b02666]'
-        : 'bg-white text-[#333333] hover:bg-[#D12E7B] hover:text-white';
-
-    const dividerStyle = !isHomePage || isScrolled ? 'bg-gray-300' : 'bg-white/30';
-
     return (
         <header className={`fixed top-0 left-0 w-full z-[999] transition-all duration-300 ${headerStyle}`}>
             <div className="max-w-7xl mx-auto px-6 md:px-8 flex justify-between items-center">

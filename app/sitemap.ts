@@ -1,6 +1,9 @@
 import type { MetadataRoute } from 'next';
+import { getSiteUrl } from '@/lib/env';
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+const SITE_URL = getSiteUrl();
+
+export const dynamic = 'force-dynamic';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
@@ -9,7 +12,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/servicios`, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${SITE_URL}/contactanos`, changeFrequency: 'yearly', priority: 0.5 },
     { url: `${SITE_URL}/resultados`, changeFrequency: 'yearly', priority: 0.6 },
-    // /resultados/admin-login y /resultados/admin-dashboard quedan
-    // fuera a propósito: no son contenido público a indexar.
   ];
 }

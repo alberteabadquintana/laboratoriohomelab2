@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 
 const pasosResultados = [
@@ -78,9 +79,11 @@ export default function ResultsGrid() {
 
                                 {/* CONTENEDOR DE IMAGEN CENTRADA (Estilo Referencia) */}
                                 <div className="relative w-full aspect-square max-h-[220px] bg-gray-50 rounded-[2rem] flex items-center justify-center mb-8 overflow-hidden border border-gray-50">
-                                    <img
+                                    <Image
                                         src={item.imagen}
                                         alt={item.titulo}
+                                        width={200}
+                                        height={200}
                                         className="w-4/5 h-4/5 object-contain group-hover:scale-110 transition-transform duration-700"
                                     />
                                 </div>

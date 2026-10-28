@@ -26,7 +26,7 @@ export default function WhatsAppFloat() {
     };
 
     return (
-        <div className="fixed bottom-[96px] right-6 z-[100] flex flex-col items-end gap-4">
+        <div className="fixed bottom-5 right-4 z-[100] flex flex-col items-end gap-4">
             <AnimatePresence>
                 {isOpen && (
                     <motion.div

@@ -5,11 +5,9 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import WhatsAppFloat from './components/WhatsAppFloat';
 import LoadingScreen from './components/LoadingScreen'; 
-import ChatBot from './components/ChatBot';
+import { getSiteUrl } from '@/lib/env';
 
-// TODO: reemplazar por el dominio real cuando esté definido (o setear
-// NEXT_PUBLIC_SITE_URL en .env.local / variables de entorno de Vercel).
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+const SITE_URL = getSiteUrl();
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -17,8 +15,8 @@ export const metadata: Metadata = {
     default: 'HomeLab - Laboratorio Clínico',
     template: '%s | HomeLab Laboratorio Clínico',
   },
-  description: 'Innovación y precisión en cada análisis clínico. Laboratorio en Lima con resultados confiables y atención de calidad.',
-  keywords: ['laboratorio clínico', 'análisis clínicos', 'HomeLab', 'Clínica Bello Horizonte', 'resultados de laboratorio Lima'],
+  description: 'Innovación y precisión en cada análisis clínico. Laboratorio en Piura con resultados confiables y atención de calidad.',
+  keywords: ['laboratorio clínico', 'análisis clínicos', 'HomeLab', 'Clínica Bello Horizonte', 'resultados de laboratorio Piura'],
   openGraph: {
     type: 'website',
     locale: 'es_PE',
@@ -77,7 +75,6 @@ export default function RootLayout({
         {/* Componentes flotantes y globales */}
         
         <WhatsAppFloat />
-        <ChatBot />
         <Footer />
       </body>
     </html>

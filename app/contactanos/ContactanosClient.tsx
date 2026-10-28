@@ -2,6 +2,9 @@
 "use client";
 import { Facebook, Instagram, Linkedin } from "lucide-react";
 
+const MAPS_URL = "https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica%20Bello%20Horizonte%20Piura";
+const MAPS_EMBED_URL = "https://www.google.com/maps?q=Cl%C3%ADnica%20Bello%20Horizonte%20Piura&z=17&output=embed";
+
 export default function ContactanosClient() {
   return (
     <section className="bg-white pt-32 pb-20">
@@ -42,7 +45,7 @@ export default function ContactanosClient() {
             </a>
 
             <a
-              href="https://maps.app.goo.gl/N7XL2Du3xnLDdpHk6"
+              href={MAPS_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-between bg-[#333333] p-6 rounded-xl text-white group hover:bg-[#D12E7B] transition-all duration-300"
@@ -95,8 +98,23 @@ export default function ContactanosClient() {
             <div className="relative rounded-[2rem] overflow-hidden shadow-xl border border-gray-100 group h-full">
               <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#D12E7B] via-[#e95fa0] to-[#D12E7B] z-10"></div>
               <div className="absolute inset-0 ring-1 ring-inset ring-black/5 rounded-[2rem] z-10 pointer-events-none"></div>
+              <div className="absolute right-4 top-5 z-20 w-[calc(100%-2rem)] max-w-md rounded-xl bg-white/95 px-4 py-3 shadow-lg backdrop-blur">
+                <p className="text-[9px] font-black uppercase tracking-[0.18em] text-[#D12E7B]">Ubicación</p>
+                <p className="mt-0.5 text-xs font-black leading-5 text-[#333333] md:text-sm">
+                  HomeLab se encuentra dentro de las instalaciones de la Clínica Bello Horizonte.
+                </p>
+                <p className="mt-0.5 text-[11px] font-semibold text-gray-500">Av. Ramon Romero, Piura 20009</p>
+              </div>
+              <a
+                href={MAPS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute bottom-5 left-5 z-20 rounded-full bg-white px-5 py-3 text-xs font-black uppercase tracking-widest text-[#333333] shadow-xl transition-all hover:bg-[#D12E7B] hover:text-white active:scale-95"
+              >
+                Ver en Google Maps
+              </a>
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3973.5197069650494!2d-80.65244082525777!3d-5.180651194796812!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x904a1b00177c8c23%3A0x2a3bac83cf93ab2b!2sCl%C3%ADnica%20Bello%20Horizonte%20-%20PIURA!5e0!3m2!1ses-419!2spe!4v1786209209591!5m2!1ses-419!2spe"
+                src={MAPS_EMBED_URL}
                 width="100%"
                 height="100%"
                 style={{ border: 0, display: 'block', minHeight: '400px' }}

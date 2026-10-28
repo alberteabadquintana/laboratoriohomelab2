@@ -151,7 +151,7 @@ export default function ServiceCard({ servicio }: { servicio: Servicio }) {
               <div className="overflow-y-auto p-6 md:p-8 pt-5">
                 {examenesFiltrados.length === 0 ? (
                   <p className="text-gray-400 text-sm text-center py-8">
-                    No encontramos exámenes que coincidan con "{busqueda}".
+                    No encontramos exámenes que coincidan con &quot;{busqueda}&quot;.
                   </p>
                 ) : (
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1">

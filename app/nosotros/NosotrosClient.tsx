@@ -3,6 +3,7 @@
 
 import { ShieldCheck, Target, Zap, Award } from 'lucide-react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 // Datos de los valores para facilitar cambios futuros
 const VALORES = [
@@ -69,9 +70,11 @@ export default function NosotrosClient() {
             className="relative"
           >
             <div className="relative z-10 overflow-hidden rounded-[2.5rem] shadow-2xl">
-                <img 
-                  src="/images/imagen1.jpg" 
-                  alt="Equipo de HomeLab" 
+                <Image
+                  src="/images/imagen1.jpg"
+                  alt="Equipo de HomeLab"
+                  width={800}
+                  height={600}
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                 />
             </div>

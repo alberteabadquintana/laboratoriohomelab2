@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Facebook, Instagram, Twitter, MapPin, Phone, Mail, ChevronRight, Microscope, Linkedin, Youtube, Beaker } from 'lucide-react';
+import { Facebook, Instagram, MapPin, Phone, Mail, ChevronRight, Youtube, Beaker } from 'lucide-react';
 import Image from "next/image";
 
 export default function Footer() {
@@ -149,7 +149,7 @@ export default function Footer() {
             <div className="bg-[#1a1a1a] py-3">
                 <div className="max-w-7xl mx-auto px-4 text-center">
                     <p className="text-gray-600 text-[10px] uppercase tracking-[0.2em]">
-                        &copy; {currentYear} HOME LAB. Precisión y Confianza. Todos los derechos reservados.
+                        &copy; {currentYear} ABRT-HOMELAB. Precisión y Confianza. Todos los derechos reservados.
                     </p>
                 </div>
             </div>
